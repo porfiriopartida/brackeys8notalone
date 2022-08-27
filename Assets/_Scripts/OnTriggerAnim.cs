@@ -1,14 +1,17 @@
 using UnityEngine;
 
-public class OnTriggerAnim : MonoBehaviour
+namespace _Scripts
 {
-    public Animator animator;
-    public string state;
-    public LayerMask LayerMask;
-    private void OnTriggerEnter(Collider other)
+    public class OnTriggerAnim : MonoBehaviour
     {
-        if (LayerMask == (LayerMask | (1 << other.gameObject.layer))) {
-            animator.Play(state);
+        public Animator animator;
+        public string state;
+        public LayerMask LayerMask;
+        private void OnTriggerEnter(Collider other)
+        {
+            if (LayerMask == (LayerMask | (1 << other.gameObject.layer))) {
+                animator.Play(state);
+            }
         }
     }
 }

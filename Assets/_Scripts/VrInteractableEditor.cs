@@ -1,17 +1,19 @@
 using UnityEditor;
 using UnityEngine;
 
-[CustomEditor(typeof(VrInteractable))]
-public class VrInteractableEditor : Editor
+namespace _Scripts
 {
-    public override void OnInspectorGUI()
+    [CustomEditor(typeof(VrInteractable))]
+    public class VrInteractableEditor : Editor
     {
-        base.OnInspectorGUI();
-        DrawDefaultInspector();
-        var interactable = (VrInteractable) target;
-        if (GUILayout.Button("Interact"))
+        public override void OnInspectorGUI()
         {
-            interactable.Interact();
+            DrawDefaultInspector();
+            var interactable = (VrInteractable) target;
+            if (GUILayout.Button("Interact"))
+            {
+                interactable.Interact();
+            }
         }
     }
 }
